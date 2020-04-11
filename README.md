@@ -19,7 +19,7 @@ I am trying to update it to support libasound2 so that it would work on my hassi
 
 ## Repository
 
-To install use this [repository](https://github.com/v3rm0n/hassio)
+To install use this [repository](https://github.com/lucazertyui/hassio). (fork from v3rm0n)
 
 [aarch64-shield]: https://img.shields.io/badge/architecture-aarch64-blue.svg
 [armhf-shield]: https://img.shields.io/badge/architecture-armhf-blue.svg
