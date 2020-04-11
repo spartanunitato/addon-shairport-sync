@@ -19,6 +19,11 @@ RUN apk -U add \
         soxr-dev \
         avahi-dev \
         libconfig-dev \
+        libasound2-data=1.1.3-5ubuntu0.2 \
+        libasound2-dev=1.1.3-5ubuntu0.2 \
+        libasound2-plugins=1.1.1-1ubuntu1 \
+        libasound2=1.1.3-5ubuntu0.2 \
+        libssl-dev=1.1.1-1ubuntu2.1~18.04.5 \
  && cd /root \
  && git clone https://github.com/mikebrady/shairport-sync.git \
  && cd shairport-sync \
