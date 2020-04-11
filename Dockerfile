@@ -12,7 +12,6 @@ RUN apk -U add \
         autoconf \
         automake \
         libtool \
-        alsa-lib-dev \
         libdaemon-dev \
         popt-dev \
         libressl-dev \
@@ -51,7 +50,6 @@ RUN apk -U add \
         autoconf \
         automake \
         libtool \
-        alsa-lib-dev \
         libdaemon-dev \
         popt-dev \
         libressl-dev \
@@ -70,7 +68,6 @@ RUN apk -U add \
     \
  && apk add \
         dbus \
-        alsa-lib \
         libdaemon \
         popt \
         libressl \
@@ -95,7 +92,7 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="Shairport Sync" \
+    io.hass.name="Shairport Sync forked" \
     io.hass.description="Shairport Sync for Hass.io" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
