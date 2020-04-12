@@ -14,22 +14,19 @@ RUN apk -U add \
         libtool \
         libdaemon-dev \
         popt-dev \
+        alsa-lib-dev \
         libressl-dev \
         soxr-dev \
         avahi-dev \
         libconfig-dev \
- && apt-get update \
- && apt-get install -y --no-install-recommends \
-        build-essential=12.4ubuntu1 \
-        cargo=0.40.0-3ubuntu1~18.04.1 \
-        git=1:2.17.1-1ubuntu0.5 \
-        libasound2-data=1.1.3-5ubuntu0.2 \
-        libasound2-dev=1.1.3-5ubuntu0.2 \
-        libasound2-plugins=1.1.1-1ubuntu1 \
-        libasound2=1.1.3-5ubuntu0.2 \
-        libssl-dev=1.1.1-1ubuntu2.1~18.04.5 \
-        pkg-config=0.29.1-0ubuntu2 \
-        rustc=1.39.0+dfsg1+llvm-3ubuntu1~18.04.1 \
+        cargo \
+        libasound2-data\
+        libasound2-dev\
+        libasound2-plugins\
+        libasound2\
+        libssl-dev\
+        pkg-config\
+        rustc\
  && cd /root \
  && git clone https://github.com/mikebrady/shairport-sync.git \
  && cd shairport-sync \
@@ -38,6 +35,7 @@ RUN apk -U add \
         --with-alsa \
         --with-pipe \
         --with-avahi \
+        --with-libasound2 \
         --with-ssl=openssl \
         --with-soxr \
         --with-metadata \
@@ -56,24 +54,21 @@ RUN apk -U add \
         soxr-dev \
         avahi-dev \
         libconfig-dev \
-\
-&& apt-get purge -y --auto-remove \
-        build-essential \
-        cargo \
-        git \
         libasound2-dev \
         libssl-dev \
         pkg-config \
         rustc \
-    \
  && apk add \
         dbus \
         libdaemon \
+        alsa-lib \
         popt \
         libressl \
         soxr \
         avahi \
         libconfig \
+        libasound2-plugins\
+        libasound2\
  && rm -rf \
         /etc/ssl \
         /var/cache/apk/* \
