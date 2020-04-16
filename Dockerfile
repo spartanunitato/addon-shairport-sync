@@ -6,7 +6,10 @@ ENV LANG C.UTF-8
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN apk -U add \
+RUN \
+    apt-get update \
+    \
+    && apt-get install\
         git \
         build-base \
         autoconf \
@@ -33,16 +36,17 @@ RUN apk -U add \
  && autoreconf -i -f \
  && ./configure \
         --with-alsa \
+        --with-pa\
         --with-pipe \
+        --with-soundio\
         --with-avahi \
-        --with-libasound2 \
         --with-ssl=openssl \
         --with-soxr \
         --with-metadata \
  && make \
  && make install \
  && cd / \
- && apk --purge del \
+ && apt-get purge -y --auto-remove \
         git \
         build-base \
         autoconf \
@@ -58,17 +62,6 @@ RUN apk -U add \
         libssl-dev \
         pkg-config \
         rustc \
- && apk add \
-        dbus \
-        libdaemon \
-        alsa-lib \
-        popt \
-        libressl \
-        soxr \
-        avahi \
-        libconfig \
-        libasound2-plugins\
-        libasound2\
  && rm -rf \
         /etc/ssl \
         /var/cache/apk/* \
