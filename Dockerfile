@@ -17,7 +17,6 @@ RUN \
         libtool \
         libdaemon-dev \
         popt-dev \
-        alsa-lib-dev \
         libressl-dev \
         soxr-dev \
         avahi-dev \
