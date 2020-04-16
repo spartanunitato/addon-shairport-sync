@@ -9,7 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apt-get update \
     \
-    && apt-get install\
+    && apt-get install --yes\
         git \
         build-base \
         autoconf \
@@ -36,7 +36,6 @@ RUN \
  && autoreconf -i -f \
  && ./configure \
         --with-alsa \
-        --with-pa\
         --with-pipe \
         --with-soundio\
         --with-avahi \
@@ -57,7 +56,6 @@ RUN \
         libressl-dev \
         soxr-dev \
         avahi-dev \
-        libconfig-dev \
         libasound2-dev \
         libssl-dev \
         pkg-config \
