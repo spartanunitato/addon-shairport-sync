@@ -9,7 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apt-get update \
     \
-    && apt-get install --yes\
+    && apt-get install -y\
         git \
         build-base \
         autoconf \
@@ -30,22 +30,28 @@ RUN \
         libssl-dev\
         pkg-config\
         rustc\
- && cd /root \
- && git clone https://github.com/mikebrady/shairport-sync.git \
- && cd shairport-sync \
- && autoreconf -i -f \
- && ./configure \
+   \
+   && apt-get install--yes\
+        libasounf2-plugins \
+   \
+   && cd /root \
+   && git clone https://github.com/mikebrady/shairport-sync.git \
+   && cd shairport-sync \
+   && autoreconf -i -f \
+   && ./configure \
         --with-alsa \
         --with-pipe \
         --with-soundio\
         --with-avahi \
+        --with-stdout \
         --with-ssl=openssl \
         --with-soxr \
         --with-metadata \
- && make \
- && make install \
- && cd / \
- && apt-get purge -y --auto-remove \
+   && make \
+   && make install \
+   && cd / \
+   \
+   && apt-get purge -y --auto-remove \
         git \
         build-base \
         autoconf \
@@ -56,14 +62,16 @@ RUN \
         libressl-dev \
         soxr-dev \
         avahi-dev \
-        libasound2-dev \
-        libssl-dev \
         pkg-config \
         rustc \
- && rm -rf \
+   \
+   && rm -rf \
         /etc/ssl \
         /var/cache/apk/* \
         /lib/apk/db/* \
+        /tmp/* \
+        /root/.cargo \
+        /var/{cache,log}/* \
         /lib/apt/lists/*\
         /root/shairport-sync
 
