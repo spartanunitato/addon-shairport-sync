@@ -16,7 +16,7 @@ RUN \
         automake \
         libtool \
         libdaemon-dev \
-        popt-dev \
+        libpopt-dev \
         libressl-dev \
         soxr-dev \
         avahi-dev \
@@ -31,7 +31,7 @@ RUN \
         rustc\
    \
    && apt-get install--yes\
-        libasounf2-plugins \
+        libasound2-plugins\
    \
    && cd /root \
    && git clone https://github.com/mikebrady/shairport-sync.git \
