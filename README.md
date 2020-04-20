@@ -31,5 +31,5 @@ To install use this [repository](https://github.com/lucazertyui/hassio). (forked
 [microbadger]: https://microbadger.com/images/maidok/shairport-sync
 [pulls-shield]: https://img.shields.io/docker/pulls/maidok/shairport-sync.svg
 [version-shield]: https://images.microbadger.com/badges/version/maidok/shairport-sync.svg
-[releases-shield]: https://img.shields.io/github/release/v3rm0n/addon-shairport-sync.svg
+[releases-shield]: https://img.shields.io/github/release/lucazertyui/addon-shairport-sync.svg
 [releases]: https://github.com/lucazertyui/addon-shairport-sync/releases
