@@ -32,6 +32,10 @@ RUN \
    \
    && apt-get install--yes\
         libasound2-plugins\
+        libasound2-data\
+        libasound2-dev\
+        libasound2-plugins\
+        libasound2\
    \
    && cd /root \
    && git clone https://github.com/mikebrady/shairport-sync.git \
