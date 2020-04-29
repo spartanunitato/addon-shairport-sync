@@ -5,7 +5,7 @@
 
 Enables Airplay audio streaming to Home Assistant. 
 <br/>Based on shairport-sync addon by https://github.com/v3rm0n.
-<br/>I am trying to update it to support libasound2 so that it would work on my hassio setup. 
+<br/>I am trying to update it to support libasound2 so that it would work on my hassio setup. Forked from lucazertyui to edit.
 
 ## Docker status
 
