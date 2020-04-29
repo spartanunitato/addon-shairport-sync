@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "slug": "shairport_sync",
   "description": "Shairport Sync plugin for Hass.io",
-  "url": "https://github.com/lucazertui/addon-shairport-sync",
+  "url": "https://github.com/spartanunitato/addon-shairport-sync",
   "startup": "application",
   "arch": [
     "aarch64",
